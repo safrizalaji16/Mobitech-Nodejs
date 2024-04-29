@@ -3,11 +3,11 @@ const { authenticationAdmin } = require("../middlewares/authentication");
 const router = require("express").Router();
 
 router
+  .get("/", Controller.getUsers)
   .post("/login", Controller.login)
   .post("/register", Controller.register)
-  .get("/users", Controller.getUsers)
   .use(authenticationAdmin)
   .post("/admin-register", Controller.adminRegister)
-  .delete("/users/:id", Controller.deleteUser);
+  .delete("/:id", Controller.deleteUser);
 
 module.exports = router;
