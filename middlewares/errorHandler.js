@@ -10,19 +10,25 @@ module.exports = function errorHandler(err, req, res, next) {
       msg = err.errors.map((el) => el.message)[0];
       break;
 
-    case "Food Not Found":
+    case "JsonWebTokenError":
+    case "Unauthorized":
+      status = 401;
+      msg = "Please Login First";
+      break;
+
+    case "Error email or password":
+      status = 401;
+      msg = "Error invalid email or password";
+      break;
+
+    case "Product Not Found":
       status = 404;
-      msg = "Food Not Found";
+      msg = "Product Not Found";
       break;
 
-    case "Carts Is Required":
-      status = 400;
-      msg = "Carts Is Required";
-      break;
-
-    case "Stock Not Enough":
-      status = 400;
-      msg = "Stock Not Enough";
+    case "Brand Not Found":
+      status = 404;
+      msg = "Brand Not Found";
       break;
   }
 

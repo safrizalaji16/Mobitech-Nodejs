@@ -12,6 +12,7 @@ module.exports = {
       name: {
         type: Sequelize.STRING,
         allowNull: false,
+        unique: true,
       },
       description: {
         type: Sequelize.STRING,
@@ -24,6 +25,7 @@ module.exports = {
       quantity: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        defaultValue: 1,
       },
       BrandId: {
         type: Sequelize.INTEGER,
