@@ -6,8 +6,7 @@ const { authentication } = require("../middlewares/authentication");
 
 router
   .use("/users", userRouter)
-  .use(authentication)
-  .use("/brands", brandRouter)
-  .use("/products", productRouter);
+  .use("/brands", authentication, brandRouter)
+  .use("/products", authentication, productRouter);
 
 module.exports = router;

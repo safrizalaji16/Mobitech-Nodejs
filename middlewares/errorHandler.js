@@ -16,6 +16,11 @@ module.exports = function errorHandler(err, req, res, next) {
       msg = "Please Login First";
       break;
 
+    case "Forbidden":
+      status = 403;
+      msg = "Don't have permission";
+      break;
+
     case "Error email or password":
       status = 401;
       msg = "Error invalid email or password";

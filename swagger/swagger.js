@@ -15,7 +15,7 @@ module.exports = function (port) {
         },
       ],
     },
-    apis: ["./routes/*.js"],
+    apis: ["./swagger/*.js"],
   };
 
   return swaggerJsDoc(swaggerOptions);

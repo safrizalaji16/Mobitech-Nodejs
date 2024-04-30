@@ -107,7 +107,7 @@ class Controller {
       });
 
       res.status(200).json({
-        message: `User with email ${productById.email} has been deleted`,
+        message: `User with email ${userById.email} has been deleted`,
       });
     } catch (err) {
       next(err);

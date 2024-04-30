@@ -36,7 +36,7 @@ module.exports = {
 
       if (!access_token) {
         throw {
-          name: "Unauthorized",
+          name: "Forbidden",
         };
       }
 
@@ -44,7 +44,7 @@ module.exports = {
       const user = await User.findByPk(payload.id);
       if (!user || user.role !== "admin") {
         throw {
-          name: "Unauthorized",
+          name: "Forbidden",
         };
       }
 
