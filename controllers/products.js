@@ -4,7 +4,6 @@ const { Product, Brand } = require("../models");
 class Controller {
   static async getProducts(req, res, next) {
     try {
-      console.log(req.query, "lalal");
       const { query } = req.query;
       const options = query
         ? {

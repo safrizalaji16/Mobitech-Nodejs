@@ -33,7 +33,7 @@
  * @swagger
  * /products:
  *   get:
- *     summary: Get all products
+ *     summary: Get products with query
  *     tags: [Products]
  *     parameters:
  *       - in: header
@@ -42,6 +42,11 @@
  *           type: string
  *         required: true
  *         description: JWT token
+ *       - in: query
+ *         name: query
+ *         schema:
+ *           type: string
+ *         description: Query for search
  *     responses:
  *       200:
  *         description: The list of products
